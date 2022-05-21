@@ -1,0 +1,23 @@
+{
+  "name": "Chat-Room",
+  "version": "1.0.0",
+  "description": "Creates a chat room for multiple people to join",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BossyLemon0/Chat-Room.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BossyLemon0/Chat-Room/issues"
+  },
+  "homepage": "https://github.com/BossyLemon0/Chat-Room#readme",
+  "dependencies": {
+    "concurrently": "^7.2.0"
+  }
+}
