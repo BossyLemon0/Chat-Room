@@ -99,15 +99,15 @@ function App() {
         </div>
         {/* chat  */}
         <div className='chatarea'>
-          chat
+          <Paper className='left' sx={{ marginBottom:2}}>chat</Paper>
           {sentMessages.map((msgObj, idx)=>{
             return msgObj.user == userCode ? 
-            <div key={idx} className='messageObj'>
-              <Paper className='right'>{msgObj.message}</Paper>
+            <div key={idx} className='messageObjS'>
+              <Paper className='right' sx={{minWidth:200}}>{msgObj.message}</Paper>
               <div className='time'>{msgObj.time}</div>
             </div>
             :
-            <div key={idx} className='messageObj'>
+            <div key={idx} className='messageObjR'>
               <Paper className='left'>{msgObj.message}</Paper>
               <div className='time'>{msgObj.time}</div>
             </div>

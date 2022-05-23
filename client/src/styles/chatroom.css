@@ -7,8 +7,10 @@
     align-items: center;
 }
 
+
 .chatarea{
     height: 70vh;
+    overflow-y: auto;
     /* width: max-content; */
 }
 
@@ -17,4 +19,21 @@
     justify-content: center;
     align-items: center;
     height:4vh
+}
+
+.messageObjS{
+margin-left: 20vw;
+}
+
+.right{
+    background: linear-gradient(to right, #dad299, #b0dab9);
+    /* background: linear-gradient(to right, #49a09d, #5f2c82); */
+    font-size: 20px;
+    height: 22px;
+}
+.left{
+    background: linear-gradient(to right, #dad299, #b0dab9);
+    font-size: 20px;
+    height: 22px;
+    width:200px
 }
