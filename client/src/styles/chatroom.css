@@ -10,5 +10,11 @@
 .chatarea{
     height: 70vh;
     /* width: max-content; */
-    
+}
+
+.header-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:4vh
 }
