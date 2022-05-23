@@ -9,16 +9,13 @@ const socket = io('http://localhost:3001')
 
 function App() {
 
-    useEffect(()=>{
-      // get messsages
-    },[])
-
-    const [userCode, setUserCode] = useState(null);
-    const [message, setMessage] = useState('');
-    const [sentMessages, setSentMessages] = useState([]);
-    const handleMessage = (event) => {
-      setMessage(event.target.value);
-    };
+  const [userCode, setUserCode] = useState(null);
+  const [message, setMessage] = useState('');
+  const [sentMessages, setSentMessages] = useState([]);
+  const [msgsRendered, setMsgsRendered] = useState(<div></div>)
+  const handleMessage = (event) => {
+    setMessage(event.target.value);
+  };
 
         socket.on("connect", ()=>{
             console.log("hey")
@@ -56,29 +53,40 @@ function App() {
       return message
     }
 
+
+// TESTING
+
+// 1
     // const getSentMessages = ()=>{
     //   return sentMessages
     // }
 
-    const renderMsgs = (msg) => {
-      // map out sentMessages
-      // if the messages match the persons usercode have the message display right, if not display left
-      
-      if(msg == userCode){
-        return (
-        <Paper></Paper>
-        )
-
-      }
-      else{
-
-      }
-
-    }
+// 2
+    // var renderMsgs = () => {
+    //   // map out sentMessages
+    //   // if the messages match the persons usercode have the message display right, if not display left
+    //   console.log("working?")
+    //   sentMessages.map((msgObj)=>{
+    //     if(msgObj.user == userCode){
+    //       return (
+    //       <div className='messageObj'>
+    //         <Paper className='right'>{msgObj.message}</Paper>
+    //         <div className='time'>{msgObj.time}</div>
+    //       </div>
+    //       )
+  
+    //     }
+    //     else{
+    //       return (
+    //         <div className='messageObj'>
+    //           <Paper className='left'>{msgObj.message}</Paper>
+    //           <div className='time'>{msgObj.time}</div>
+    //         </div>
+    //         )
+    //     }
+    //   })
+    // }
     
-    function render (){
-    }
-
   return (
     <div className='backdrop'>
       <Paper elevation={3} sx={{minHeight: 1000, minWidth:800, display:'flex', justifyContent:"center", alignItems:'center', flexDirection:"column"}}>
@@ -90,7 +98,21 @@ function App() {
         }
         </div>
         {/* chat  */}
-        <div className='chatarea'>chat</div>
+        <div className='chatarea'>
+          chat
+          {sentMessages.map((msgObj, idx)=>{
+            return msgObj.user == userCode ? 
+            <div key={idx} className='messageObj'>
+              <Paper className='right'>{msgObj.message}</Paper>
+              <div className='time'>{msgObj.time}</div>
+            </div>
+            :
+            <div key={idx} className='messageObj'>
+              <Paper className='left'>{msgObj.message}</Paper>
+              <div className='time'>{msgObj.time}</div>
+            </div>
+          })}
+        </div>
         {/* typing */}
         <div>
         <TextField
