@@ -2,7 +2,7 @@ import { io } from 'socket.io-client'
 import React, { useState, useEffect } from 'react'
 import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField';
-
+import "./styles/chatroom.css"
 
 const socket = io('http://localhost:3001')
 
